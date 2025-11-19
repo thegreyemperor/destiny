@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destiny 2 Interface</title>
+</head>
+<body>
+
+
+    <nav>
+        <ul>
+            <li><a href="">Store</a></li>
+            <li><a href="">Rewards</a></li>
+            <li><a href="">Quests</a></li>
+            <li><a href="">World</a></li>
+            <li><a href="">Portal</a></li>
+        </ul>
+    </nav>
+   
+
+    <main>
+        
+        <div class="column">
+            <div class="box"></div>
+            <div class="box"></div>
+            <div class="box"></div>
+        </div>
+
+        <div class="grid-center">
+            
+            <div>Featured Quests</div>
+            
+            <div class="quest box-top">
+                <div class="quest-name">Season of Reclamation</div>
+                <div class="quest-sub">18 Challenges Available</div>
+            </div>
+
+            <div class="quest box-left">
+                <div class="quest-info">
+                    <div class="quest-type">Expansion</div>
+                </div>
+                <div class="quest-detail">
+                    <div class="quest-name">The Edge of Fate</div>
+                    <div class="quest-step">Step 9 of 32</div>
+                    <div class="quest-description">Recover strangelet capsules across Kepler and return the to the Altar of Relativity.</div>
+                </div>
+                <img class="quest-bg" src="https://drive.google.com/thumbnail?id=1Vo_MRZhpiVC85w76At1_T7xV8r2kuBRp&sz=s4000">
+            </div>
+            
+            <div class="quest box-right">
+                <div class="quest-info">
+                    <div class="quest-type">Exotic</div>
+                </div>
+                <div class="quest-detail">
+                    <div class="quest-name">A Good Match</div>
+                    <div class="quest-step">Step 2 of 7</div>
+                    <div class="quest-description">Earn points, rapidly defeat targets with Auto Rifles and defeat Guardians while using Auto Rifles.</div>
+                </div>
+                <img class="quest-bg" src="https://drive.google.com/thumbnail?id=1CRjiD7nrSrpllqsRli7baCvccVrdd0SH&sz=s4000">
+            </div>
+        </div>
+        
+        <div>Bounties
+            <div class="grid">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+    <img class="bg" src="https://drive.google.com/thumbnail?id=1ZxeYq1RGXCVw2QaHVvfziC6Uzws7lVJ5&sz=s4000">
+</body>
+</html>
+<style>
+:root {
+    --bg1: #ffffff;
+    --foreground: #1c1c1c;
+    --h1: 72px;
+    --h2: 40px;
+    --h3: 32px;
+    --h4: 24px;
+    --p: 1rem;
+}
+
+
+body {
+    font-family: inter;
+    font-size: var(--p);
+    display: grid;
+    min-block-size: 100dvh;
+    height: 100%;
+    margin: 0;
+    background: #1e1e1e;
+    color: #ffffff;
+}
+
+header {
+    display: flex;
+    position: relative;
+    margin-inline: auto;
+    height: 80px;
+    padding: 1rem 2rem;
+    background: #000000;
+}
+
+nav {
+    margin-inline: auto;
+}
+
+nav ul {
+    --_gap: 2rem;
+
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    position: relative;
+    padding: calc(var(--_gap) / 2);
+}
+
+nav li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background: teal;
+
+    translate: var(--_translate, 0);
+    scale: var(--_width, 0) 1;
+    transition:
+        scale 350ms,
+        translate 500ms;
+}
+
+nav li:hover {
+    --_width: 1;
+}
+
+nav li:hover + li {
+    --_translate: -100%;
+}
+
+nav li:has(+ :hover) {
+    --_translate: 100%;
+}
+
+nav a {
+    position: relative;
+    opacity: 0.7;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: inherit;
+    transition: 300ms;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    opacity: 1;
+    transition: 300ms;
+}
+
+main {
+    display: flex;
+    flex-direction: ;
+    align-items: start;
+    justify-self: center;
+    justify-content: space-between;
+    width: 90%;
+}
+
+footer {
+    padding: 1rem 2rem;
+}
+
+section {
+    display: block;
+    position: relative;
+    margin-inline: auto;
+    padding: 1rem;
+}
+
+h1 {
+    font-size: var(--h1);
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    width: 80px;
+    padding-top: 20px;
+    gap: 4px;
+}
+
+.box {
+    height: 80px;
+    width: 80px;
+    border: solid 1px rgb(73, 73, 73);
+    transition: 150ms;
+    background-image: url("https://drive.google.com/thumbnail?id=1MLV6CmTLU43QZtIG2gVQEv-OLrvp4ECk&sz=s4000");
+    background-size: cover;
+    background-position: center;
+}
+
+.quest:hover,
+.box:hover {
+    border-image: fill 1 linear-gradient(rgba(255, 40, 40, 0), rgba(255, 255, 255, 0.11));
+  
+    box-shadow: 1px 8px 8px #000000;
+    transition-duration: 250ms;
+}
+
+.grid {
+    display: grid;
+    width: ;
+    gap: 4px;
+    grid-template-columns: 80px 80px;
+}
+
+.grid-center {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 4px;
+    width: 700px;
+}
+
+.box-top {
+    grid-column: 1 / 3;
+    height: 80px;
+    padding-left: 15%;
+    justify-content: center;
+    border: solid 1px rgb(0, 192, 192);
+    background: linear-gradient(rgb(0, 143, 143), rgb(0, 90, 90))
+}
+
+.box-left,
+.box-right {
+    height: 350px;
+    border: solid 1px;
+    place-content: space-between;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0));
+}
+
+.quest {
+    display: flex;
+    flex-direction: column;
+}
+
+.quest-info {
+    background: rgba(0, 0, 0, 0.178);
+    overflow: hidden;
+}
+
+.quest-type {
+    padding: 10px;
+}
+
+.quest-detail {
+    position: relative;
+    padding: 10px;
+}
+
+.quest-name {
+    font-weight: 600;
+}
+
+.quest-step {
+    font-weight: 300;
+    font-size: 14px;
+    color: grey;
+}
+
+.quest-description {
+    font-size: 12px;
+    font-weight: 200;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.quest-bg {
+    position: absolute;
+    object-fit: cover;
+    place-self: center;
+    aspect-ratio: 1 / 1;
+    height: 350px;
+    z-index: -1;
+}
+
+.container {
+    max-width: 500px;
+    border: solid 1px;
+}
+
+.bg {
+    position: fixed;
+    overflow: hidden;
+    z-index: -2;
+}
+</style>
